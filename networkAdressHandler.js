@@ -22,19 +22,22 @@ function inputToBinary(input){
     let tempMask = input.mask;
     let binaryMask = '';
     let tempArray = [];
+    let tempString = '';
  
     // FOR IP ADRESS
     for(let i = 0; i < tempIp.length; i++){
         let tempChar = tempIp[i];
-        let tempString = '';
-        while(tempChar !== '.'){
+        if(tempChar !== '.'){
             tempString += tempChar;
         }
-        tempArray.push(tempString);
+        else {
+            tempArray.push(tempString);
+            tempString = '';
+        }
     }
     for(let i = 0; i < tempArray.length; i++){
-        let tempString = tempArray[i];
-        tempArray[i] = tempString.toString(2);
+        let tempString2 = tempArray[i];
+        tempArray[i] = tempString2.toString(2);
         binaryIp += tempArray[i];
     }
 
@@ -42,15 +45,18 @@ function inputToBinary(input){
     // FOR MASK 
     for(let i = 0; i < tempMask.length; i++){
         let tempChar = tempMask[i];
-        let tempString = '';
-        while(tempChar !== '.'){
+        
+        if(tempChar !== '.'){
             tempString += tempChar;
         }
-        tempArray.push(tempString);
+        else{
+            tempArray.push(tempString);
+            tempString = '';
+        } 
     }
     for(let i = 0; i < tempArray.length; i++){
-        let tempString = tempArray[i];
-        tempArray[i] = tempString.toString(2);
+        let tempString2 = tempArray[i];
+        tempArray[i] = tempString2.toString(2);
         binaryMask += tempArray[i];
     }
 
