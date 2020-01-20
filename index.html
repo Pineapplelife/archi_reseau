@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Archi Réseau</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='networkAdressHandler.js'></script>
+</head>
+<body>
+    <header>
+        <h1>Conversion d'une adresse ip et d'un masque sous réseau en binaire</h1>
+    </header>
+    
+    <div>
+        <input id="ip" class="form-control" type="text" placeholder="adresse ip...">
+        <input id="mask" class="form-control" type="text" placeholder="mask sous-réseau..." >
+        <button class="btn btn-outline-info" onclick="run()">Conversion</button>
+    </div>
+
+    <div>
+        <h2>Adress Ip en binaire</h2>
+        <h4 id="ipOut"></h4>
+        <h2>Masque de sous réseau en binaire</h2>
+        <h3 id="maskOut"></h3>
+    </div>
+
+
+</body>
+</html>
